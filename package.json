@@ -2,7 +2,7 @@
   "name": "ExampleMail",
   "version": "1.0.0",
   "description": "ejemplo de uso de nodemailer en nodejs",
-  "main": "nodemailer.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
