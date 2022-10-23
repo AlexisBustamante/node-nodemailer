@@ -30,7 +30,6 @@ const { config } = require('./config/config');
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
-
 let count=0;
 const timer = ()=>{
     count++
