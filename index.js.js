@@ -1,22 +1,24 @@
 const nodemailer = require("nodemailer");
 const send = async ()=>{
-
- // create reusable transporter object using the default SMTP transport
+const { config } = require('./config/config');
+  // create reusable transporter object using the default SMTP transport
+ //el host es cambiado a gmail, para enviar a gmail.
  const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
-        user: 'enrique26@ethereal.email',
-        pass: 'aNnmhvpMMESN1yhTBr'
-    }
+        user: config.usrEmail,
+        pass: config.usrPass
+        }
 });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'enrique26@ethereal.email', // sender address
-    to: "enrique26@ethereal.email", // list of receivers
-    subject: "Este es una prueba desde node con ASYNC", // Subject line
-    text: "Hola santi", // plain text body
+    from: 'alexisbustamantecisternas@gmail.com', // sender address
+    to: "alexisbustamantecisternas@gmail.com", // list of receivers
+    subject: "Prueba desde NODE", // Subject line
+    text: "Hola ALEXIS", // plain text body
     html: "<b>este es el mensaje que queria enviar desde mi aplicacion en node js </b>", // html body
   });
 
@@ -32,17 +34,15 @@ const send = async ()=>{
 let count=0;
 const timer = ()=>{
     count++
-    console.log('Esperando.../ segundos trancurridos:',count);
 }
 
-
 enviar = async () => { 
-    console.log('Enviando correo...');
+    console.log('Enviando correo a desde servidor smtp.gmail.com ...');
     console.log('espera por favor...');
-    let count = 0;
     let  idInterval = setInterval(timer,1000);
     await send();
     clearInterval(idInterval);
+    console.log('La petición demoró ',count,' segundos');
     console.log('Correo enviado correctamente...');
 
 }

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AlexisBustamante/node-nodemailer#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "nodemailer": "^6.8.0"
   },
   "devDependencies": {
