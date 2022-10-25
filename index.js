@@ -15,8 +15,8 @@ const { config } = require('./config/config');
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'alexisbustamantecisternas@gmail.com', // sender address
-    to: "alexisbustamantecisternas@gmail.com", // list of receivers
+    from: config.usrEmail, // sender address
+    to: config.usrEmail, // only for example, 
     subject: "Prueba desde NODE", // Subject line
     text: "Hola ALEXIS", // plain text body
     html: "<b>este es el mensaje que queria enviar desde mi aplicacion en node js </b>", // html body
